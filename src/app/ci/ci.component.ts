@@ -32,7 +32,7 @@ export class CiComponent implements OnInit {
       }
     ngOnInit() {
         //this.workTypeNew = "";
-        this.workType = this.formDataService.getWork();
+        this.workType = this.formDataService.getCI();
         this.itemsList = CI;
         this.radioSelected = this.itemsList[0].value;
         this.getSelecteditem();
@@ -44,21 +44,21 @@ export class CiComponent implements OnInit {
             return false;
         }
         
-        this.formDataService.setWork(this.radioSelected);
+        this.formDataService.setCI(this.radioSelected);
         return true;
     }
 
     goToPrevious(form: any) {
         if (this.save(form)) {
             // Navigate to the personal page
-            this.router.navigate(['/work2']);
+            this.router.navigate(['/work']);
         }
     }
 
     goToNext(form: any) {
         if (this.save(form)) {
             // Navigate to the address page
-            this.router.navigate(['/ci']);
+            this.router.navigate(['/work2']);
         }
     }
 

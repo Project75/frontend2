@@ -2,7 +2,7 @@ import { Component, OnInit }   from '@angular/core';
 import { Router }              from '@angular/router';
 
 import { Address }             from '../data/formData.model';
-import { FormDataService }     from '../data/formData.service';
+//import { FormDataService }     from '../data/formData.service';
 
 @Component ({
     selector:     'mt-wizard-address'
@@ -14,7 +14,7 @@ export class AddressComponent implements OnInit {
     address: Address;
     form: any;
     
-    constructor(private router: Router, private formDataService: FormDataService) {
+    constructor(private router: Router) {
     }
 
     ngOnInit() {

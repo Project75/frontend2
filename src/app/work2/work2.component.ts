@@ -62,7 +62,7 @@ export class Work2Component implements OnInit {
     goToPrevious(form: any) {
         if (this.save(form)) {
             // Navigate to the personal page
-            this.router.navigate(['/work']);
+            this.router.navigate(['/ci']);
         }
     }
 

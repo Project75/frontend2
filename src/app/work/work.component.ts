@@ -60,7 +60,7 @@ export class WorkComponent implements OnInit {
     goToNext(form: any) {
         if (this.save(form)) {
             // Navigate to the address page
-            this.router.navigate(['/work2']);
+            this.router.navigate(['/ci']);
         }
     }
 }

@@ -9,7 +9,7 @@ import { FormDataService }            from '../data/formData.service';
 })
 
 export class ResultComponent implements OnInit {
-    title = 'Incident Created !';
+    title = 'Summary Page';
     @Input() formData: FormData;
     isFormValid: boolean = false;
     
