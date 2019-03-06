@@ -1,0 +1,35 @@
+<form #workForm="ngForm" class="editForm" novalidate>
+    <div class="form-horizontal">
+        <div class="tab-pane fade in active">
+            <h4 class="head text-center">{{title}}</h4>
+            <br/>
+            <div class='row'>
+                <div class='col-xs-offset-4 col-xs-10  col-sm-4'>
+                    <div class="form-group">
+                        <ul class="list-group">
+                            <li class="list-group-item"  *ngFor="let item of itemsList; let idx = index">
+                              <input type="radio" [checked]="idx === 0"  [(ngModel)]="radioSelected" name="list_name" value="{{item.value}}" (change)="onItemChange(item)"/> 
+                              {{item.value}} <span class="label label-success">{{item.text}}</span> 
+                            </li>
+                      </ul>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="workTypeNew">Or Enter New Assignment Group</label>  
+                        <input class="form-control" id="workTypeNew" name="workTypeNew" type="text"
+                            [(ngModel)]="radioSelected">
+                        
+                    </div>
+                </div>
+                <div class='col-xs-12 col-sm-6'>
+                    
+                </div>
+            </div>
+
+            <div class="form-group text-center space-20">
+                <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(workForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+                <button class="btn btn-outline-rounded btn-info" [disabled]="!workForm.valid" (click)="goToNext(workForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+            </div>
+        </div>
+    </div>
+ 
+</form>
