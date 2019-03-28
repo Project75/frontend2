@@ -22,11 +22,11 @@ import { WorkflowService }    from './workflow/workflow.service';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { UrgencyComponent } from './urgency/urgency.component';
 import { CiComponent } from './ci/ci.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
     imports:      [ BrowserModule, 
                     FormsModule,
-                    AppRoutingModule
+                    AppRoutingModule,HttpClientModule
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],

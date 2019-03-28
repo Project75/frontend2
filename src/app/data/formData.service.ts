@@ -1,5 +1,5 @@
 import { Injectable }                        from '@angular/core';
-
+import { HttpClient } from '@angular/common/http'; 
 import { FormData, Personal, AsgGrp }       from './formData.model';
 import { WorkflowService }                   from '../workflow/workflow.service';
 import { STEPS }                             from '../workflow/workflow.model';
@@ -13,7 +13,7 @@ export class FormDataService {
     private isWorkForm2Valid: boolean = false;
    // private isAddressFormValid: boolean = false;
 //private workflowService: WorkflowService
-    constructor() { 
+    constructor(private http: HttpClient) { 
     }
 
     getPersonal(): Personal {
@@ -108,4 +108,28 @@ export class FormDataService {
         return this.isPersonalFormValid &&
                 this.isWorkFormValid ;
     }
+    getAsgGroup2(input) {
+        this.http.post("http://localhost:5001/incprediction",
+    {
+    "description":  "desktop issue"
+   
+    })
+    .subscribe(
+    data  => {
+    console.log("POST Request is successful ", data);
+    },
+    error  => {
+
+    console.log("Error", error);
+
+    }
+
+    );
+    //return "test";
+  }
+    getAsgGroup(input) {
+      
+      //return this.http.post('https://reqres.in/api/register',{"email": "sydney@fife","password": "pistol"})
+      return this.http.post('http://localhost:5001/incprediction',{"description":"desktop issue"})
+  }
 }

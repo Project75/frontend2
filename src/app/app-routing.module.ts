@@ -24,9 +24,9 @@ export const appRoutes: Routes = [
     // 4th Route
     { path: 'result',  component: ResultComponent }, //, canActivate: [WorkflowGuard]
     // 5th Route
-    //{ path: '',   redirectTo: '/personal', pathMatch: 'full' },
+    { path: '',   redirectTo: '/personal', pathMatch: 'full' },
     // 6th Route
-    //{ path: '**', component: PersonalComponent },
+    { path: '**', component: PersonalComponent },
     { path: 'urgency',  component: UrgencyComponent }
 ];
 

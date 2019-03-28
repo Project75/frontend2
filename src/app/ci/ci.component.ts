@@ -10,7 +10,7 @@ import { ci,CI }            from '../data/formData.model';
 })
 export class CiComponent implements OnInit {
 
-  title = 'Select Configuration Item?';
+  title = 'Predicted Configuration Item';
     workType: string;
     //workTypeNew: string;
     form: any;

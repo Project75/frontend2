@@ -49,16 +49,16 @@ export const IMP: Impact[] = [
 export const ASG: AsgGrp[] = [
     {
         id:1,
-        value:'DH-Enterprise IT Service Cntr',
-        text:'Recommended 76%'
+        value:'End User Services',
+        text:'Recommended 68%'
      },
      {
          id:2,
-         value:'DH-Helpdesk HDAG'
+         value:'Helpdesk'
       },
       {
           id:3,
-          value:'DH-Test'
+          value:'Telecom'
        }
 
 ]

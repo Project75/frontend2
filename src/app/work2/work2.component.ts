@@ -11,7 +11,7 @@ import { Urgency,URG,IMP,Impact }            from '../data/formData.model';
 
 export class Work2Component implements OnInit {
     
-    title = 'Select Impact & Urgency?';
+    title = 'Predicted Impact & Urgency';
     urgency: string;
     impact: string;
     form: any;

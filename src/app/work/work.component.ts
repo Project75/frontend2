@@ -12,7 +12,7 @@ import { AsgGrp,ASG }            from '../data/formData.model';
 
 export class WorkComponent implements OnInit {
     
-    title = 'Select Assignment group?';
+    title = 'Predicted Assignment group';
     workType: string;
     workTypeNew: string;
     form: any;
