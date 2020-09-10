@@ -22,7 +22,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="description">Issue</label>
-                    <input class="form-control input-md" #description="ngModel" id="description" name="description" type="text"  [(ngModel)]="personal.description">
+                    <input class="form-control input-md" #description="ngModel" id="description" name="description" type="text"  [(ngModel)]="personal.description" required minlength="10">
                     <div class="alert alert-danger" [hidden]="description.valid">Required</div>
                 </div>
                                   

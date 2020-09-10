@@ -5,30 +5,11 @@
             <div class='row'>
                 <div class='col-xs-offset-4 col-xs-4  col-sm-4 col-md-4'>
                 
-                    <div class="form-group">
-                            <label class="control-label" for="impact">Select Impact</label> 
-                        <ul class="list-group">
-                            <li class="list-group-item"  *ngFor="let item of itemsList">
-                              <input type="radio"   [(ngModel)]="radioSelected" name="impact" value="{{item.value}}" (change)="onItemChange(item)"/> 
-                              {{item.value}}  {{item.text}}
-                            </li>
-                      </ul>
-                    
-                        <label class="control-label" for="impact2">Or Enter New Value</label>  
-                        <input class="form-control" id="impact2" name="impact2" type="text"
-                            [(ngModel)]="radioSelected">                        
-                    </div>
-               
-                    <!---->
                     
                     <div class="form-group">
-                            <label class="control-label" for="urgency">Select Urgency</label> 
-                        <ul class="list-group">
-                            <li class="list-group-item"  *ngFor="let item of itemsList2">
-                                <input type="radio"   [(ngModel)]="radioSelected2" name="urgency" value="{{item.value}}" (change)="onItemChange(item)"/> 
-                                {{item.value}}  {{item.text}}
-                            </li>
-                        </ul>
+                            <label class="control-label" for="urgency">Predicted Priority</label> 
+                            <h4> <span class="label label-default">{{urgency}}</span></h4>
+                               
                     
                         <label class="control-label" for="urgency2">Or Enter New Value</label>  
                         <input class="form-control" id="urgency2" name="urgency2" type="text"

@@ -23,6 +23,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { UrgencyComponent } from './urgency/urgency.component';
 import { CiComponent } from './ci/ci.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Ci1Component } from './ci1/ci1.component';
 @NgModule({
     imports:      [ BrowserModule, 
                     FormsModule,
@@ -30,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService }],
-    declarations: [ AppComponent, NavbarComponent, PersonalComponent, WorkComponent, Work2Component, ResultComponent, MainNavComponent, UrgencyComponent, CiComponent ],
+    declarations: [ AppComponent, NavbarComponent, PersonalComponent, WorkComponent, Work2Component, ResultComponent, MainNavComponent, UrgencyComponent, CiComponent, Ci1Component ],
     bootstrap:    [ AppComponent ]
 })
 

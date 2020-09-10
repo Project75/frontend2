@@ -14,9 +14,9 @@ import { WorkflowService }      from './workflow/workflow.service';
 
 export const appRoutes: Routes = [
     // 1st Route
-    { path: 'personal',  component: PersonalComponent },
+    { path: 'inputpage',  component: PersonalComponent },
     // 2nd Route
-    { path: 'work',  component: WorkComponent },
+    { path: 'work/:id',  component: WorkComponent },
     { path: 'ci',  component: CiComponent },
     // 3rd Route
     { path: 'work2',  component: Work2Component },
@@ -24,7 +24,7 @@ export const appRoutes: Routes = [
     // 4th Route
     { path: 'result',  component: ResultComponent }, //, canActivate: [WorkflowGuard]
     // 5th Route
-    { path: '',   redirectTo: '/personal', pathMatch: 'full' },
+    { path: '',   redirectTo: '/inputpage', pathMatch: 'full' },
     // 6th Route
     { path: '**', component: PersonalComponent },
     { path: 'urgency',  component: UrgencyComponent }

@@ -1,5 +1,5 @@
 import { Component, OnInit }   from '@angular/core';
-import { Router }              from '@angular/router';
+import { ActivatedRoute, Router  }              from '@angular/router';
 
 import { FormDataService }     from '../data/formData.service';
 import { AsgGrp,ASG }            from '../data/formData.model';
@@ -11,7 +11,7 @@ import { AsgGrp,ASG }            from '../data/formData.model';
 
 
 export class WorkComponent implements OnInit {
-    
+    sub: any;
     title = 'Predicted Assignment group';
     workType: string;
     workTypeNew: string;
@@ -20,24 +20,32 @@ export class WorkComponent implements OnInit {
     radioSel:any;
   radioSelected:string;
   radioSelectedString:string;
-  itemsList: AsgGrp[] = ASG;
+  itemsList: AsgGrp[] ;
 
-    constructor(private router: Router, private formDataService: FormDataService) {
+    constructor(private route: ActivatedRoute ,private router: Router, private formDataService: FormDataService) {
     }
     getSelecteditem(){
-        this.radioSel = ASG.find(Item => Item.value === this.radioSelected);
-        this.radioSelectedString = JSON.stringify(this.radioSel);
+       // this.radioSel = this.itemsList.find(Item => Item.value === this.radioSelected);
+       // this.radioSelectedString = JSON.stringify(this.radioSel);
       }
    
       onItemChange(item){
         this.getSelecteditem();
       }
     ngOnInit() {
+        this.sub = this.route.snapshot.params.id;
+        console.log("param -",this.sub);
         this.workTypeNew = "";
-        this.workType = this.formDataService.getWork();
-        this.itemsList = ASG;
-        this.radioSelected = this.itemsList[0].value;
-        this.getSelecteditem();
+        //this.workType = this.formDataService.getWork();
+        this.formDataService.getPredictedAG2(this.sub).subscribe(
+            (res: any) => {
+                this.itemsList = res["AssignGrp"];
+                console.log("itemlist is ",this.itemsList);}
+        );
+        //this.itemsList = this.formDataService.getFormData().asgGrp;
+        console.log("itemsList=",this.itemsList);
+        //this.radioSelected = this.itemsList[0].value;
+        //this.getSelecteditem();
         console.log('Work feature loaded!');
     }
 
@@ -53,7 +61,7 @@ export class WorkComponent implements OnInit {
     goToPrevious(form: any) {
         if (this.save(form)) {
             // Navigate to the personal page
-            this.router.navigate(['/personal']);
+            this.router.navigate(['/inputpage']);
         }
     }
 

@@ -11,8 +11,8 @@ import { Urgency,URG,IMP,Impact }            from '../data/formData.model';
 
 export class Work2Component implements OnInit {
     
-    title = 'Predicted Impact & Urgency';
-    urgency: string;
+    title = 'Predicted Priority';
+    urgency: string = '3 - Moderate';
     impact: string;
     form: any;
     //
@@ -39,13 +39,13 @@ export class Work2Component implements OnInit {
       }
     ngOnInit() {       
 
-        this.impact = this.formDataService.getImpact();
-        this.itemsList = IMP;
-        this.radioSelected = this.itemsList[0].value;
+        console.log('Work2 feature loaded1!',this.urgency);
+
         this.urgency = this.formDataService.getUrgency();
-        this.itemsList2 = URG;
-        this.radioSelected2 = this.itemsList2[0].value;
-        this.getSelecteditem();
+        console.log('Work2 feature loaded2!',this.urgency);
+        if (!this.urgency){
+            this.urgency = "3 - Moderate";
+        } 
         console.log('Work2 feature loaded!');
     }
 
@@ -54,7 +54,7 @@ export class Work2Component implements OnInit {
             return false;
         }
         
-        this.formDataService.setImpact(this.radioSelected);
+        
         this.formDataService.setUrgency(this.radioSelected2);
         return true;
     }

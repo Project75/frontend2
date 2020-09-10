@@ -10,15 +10,16 @@ import { ci,CI }            from '../data/formData.model';
 })
 export class CiComponent implements OnInit {
 
-  title = 'Predicted Configuration Item';
+  title = 'Predicted Category';
     workType: string;
-    //workTypeNew: string;
+    predci: string;
+    workTypeNew: string;
     form: any;
     //
     radioSel:any;
   radioSelected:string;
   radioSelectedString:string;
-  itemsList: ci[] = CI;
+  itemsList: ci[];
 
     constructor(private router: Router, private formDataService: FormDataService) {
     }
@@ -31,10 +32,13 @@ export class CiComponent implements OnInit {
         this.getSelecteditem();
       }
     ngOnInit() {
-        //this.workTypeNew = "";
-        this.workType = this.formDataService.getCI();
-        this.itemsList = CI;
-        this.radioSelected = this.itemsList[0].value;
+        
+        //this.predci= this.formDataService.getAsgGroup("");
+        this.predci = this.formDataService.getCI();
+        this.workTypeNew = this.formDataService.getCI();
+        //this.itemsList.push("Default");
+        //this.itemsList.push(this.predci);
+        //this.radioSelected = this.itemsList[0];
         this.getSelecteditem();
         console.log('CI feature loaded!');
     }

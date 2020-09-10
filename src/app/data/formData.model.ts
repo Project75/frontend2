@@ -1,7 +1,7 @@
 export class AsgGrp{
-    id:number;
+    id?:number;
     value:string;
-    text?:string;
+    prob?:string;
 }
 
 export class Impact{
@@ -17,29 +17,21 @@ export class Urgency{
 }
 
 export class ci{
-    id:number;
+    id?:number;
     value:string;
     text?:string;
 }
 export const CI: ci[] = [
     {
         id:1,
-        value:'Desktop'
-     },
-     {
-         id:2,
-         value:'Printer'
-      },
-      {
-          id:3,
-          value:'Software'
-       }
+        value:'Default Category'
+     }
     ]
 
 export const URG: Urgency[] = [
     {
         id:1,
-        value:'No Urgency'
+        value:'3 - Moderate'
      }]
 export const IMP: Impact[] = [
     {
@@ -47,19 +39,12 @@ export const IMP: Impact[] = [
         value:'No Impact'
      }]
 export const ASG: AsgGrp[] = [
-    {
-        id:1,
-        value:'End User Services',
-        text:'Recommended 68%'
-     },
+    
      {
-         id:2,
-         value:'Helpdesk'
-      },
-      {
-          id:3,
-          value:'Telecom'
-       }
+         id:0,
+         value:'Service Desk',
+         prob:'60.0'
+      }
 
 ]
 export class FormData {
@@ -67,28 +52,26 @@ export class FormData {
     userid: string = '';
     location : string = '';
     description: string = '';
-    asgGrp: string = '';
-    ci: string = '';
-    urgency: string = '';
-    impact: string = '';
+    asgGrp: AsgGrp[] ;
+    cat: string = '';
+    priority: string = '';
     oldAG:string = '';
-    oldCI:string ='';
-    oldUR:string='';
-    oldIMP:string='';
+    oldCat:string ='';
+    oldPrio:string='';
+    createDate:string='';
 
     clear() {
         
         this.userid = '';
         this.location = '';
         this.description = '';
-        this.asgGrp = '';
-        this.ci = '';
-        this.urgency = '';
-        this.impact = '';
+        //this.asgGrp = null;
+        this.cat = '';
+        this.priority = '';       
         this.oldAG = '';
-        this.oldCI = '';
-        this.oldUR = '';
-        this.oldIMP = '';    
+        this.oldCat = '';
+        this.oldPrio = '';
+        this.createDate = '';    
     }
 }
 
